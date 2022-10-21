@@ -17,15 +17,15 @@ public class LoginTests extends TestBase {
         loginPage = new LoginPage();
 
         //Parameteres
-        String usuario = "emailerrado@email.com";
+        String usuario = "gabriedangelo";
         String senha = "123456";
-        String mensagemErroEsperada = "E-mail ou senha inv";
+        String mensagemErroEsperada = "Sua conta pode estar desativada ou bloqueada";
 
         //Test
-        loginPage.clicarEmAceitarCookies();
         loginPage.preenhcerUsuario(usuario);
+        loginPage.clicarEmEntrar1();
         loginPage.preencherSenha(senha);
-        loginPage.clicarEmLogin();
+        loginPage.clicarEmEntrar2();
 
         Assert.assertTrue(loginPage.retornaMensagemErroLogin().contains(mensagemErroEsperada));
     }

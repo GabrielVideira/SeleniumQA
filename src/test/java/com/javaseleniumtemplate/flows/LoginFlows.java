@@ -13,9 +13,9 @@ public class LoginFlows {
 
     //Flows
     public void efetuarLogin(String usuario, String senha){
-        loginPage.clicarEmAceitarCookies();
         loginPage.preenhcerUsuario(usuario);
+        loginPage.clicarEmEntrar1();
         loginPage.preencherSenha(senha);
-        loginPage.clicarEmLogin();
+        loginPage.clicarEmEntrar2();
     }
 }

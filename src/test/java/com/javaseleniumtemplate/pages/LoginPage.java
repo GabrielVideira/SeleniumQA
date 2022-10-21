@@ -5,26 +5,24 @@ import org.openqa.selenium.By;
 
 public class LoginPage extends PageBase {
     //Mapping
-    By usernameField = By.id("login");
+    By usernameField = By.id("username");
     By passwordField = By.id("password");
-    By loginButton = By.xpath("//button[@type='submit']");
-    By cookieButton = By.xpath("//*[@aria-label='dismiss cookie message']");
-    By errorMessageLabel = By.className("login-error");
+    By loginButton1 = By.xpath("//*[@id=\"login-form\"]/fieldset/input[2]");
+    By loginButton2 = By.xpath("//*[@id=\"login-form\"]/fieldset/input[3]");
+    By errorMessageLabel = By.xpath("//*[@id=\"main-container\"]/div/div/div/div/div[4]/p");
 
     //Actions
     public void preenhcerUsuario(String usuario){
         sendKeys(usernameField, usuario);
     }
 
+    public void clicarEmEntrar1(){ click(loginButton1); }
+
     public void preencherSenha(String senha){
         sendKeys(passwordField, senha);
     }
 
-    public void clicarEmLogin(){
-        click(loginButton);
-    }
-
-    public void clicarEmAceitarCookies(){ click(cookieButton);}
+    public void clicarEmEntrar2(){ click(loginButton2); }
 
     public String retornaMensagemErroLogin(){ return getText(errorMessageLabel); }
 }
