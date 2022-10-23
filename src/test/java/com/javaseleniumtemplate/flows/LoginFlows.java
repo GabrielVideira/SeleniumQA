@@ -18,4 +18,11 @@ public class LoginFlows {
         loginPage.preencherSenha(senha);
         loginPage.clicarEmEntrar2();
     }
+    public void reajusteSenha(String usuario, String email){
+        loginPage.preenhcerUsuario(usuario);
+        loginPage.clicarEmEntrar1();
+        loginPage.clicarEmPerdeuSenha();
+        loginPage.preencherEmail(email);
+        loginPage.clicarEmEnviar();
+    }
 }

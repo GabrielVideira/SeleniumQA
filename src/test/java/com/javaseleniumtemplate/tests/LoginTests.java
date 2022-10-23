@@ -18,7 +18,7 @@ public class LoginTests extends TestBase {
 
         //Parameteres
         String usuario = "gabriedangelo";
-        String senha = "123456";
+        String senha = "1234";
         String mensagemErroEsperada = "Sua conta pode estar desativada ou bloqueada";
 
         //Test
@@ -28,5 +28,24 @@ public class LoginTests extends TestBase {
         loginPage.clicarEmEntrar2();
 
         Assert.assertTrue(loginPage.retornaMensagemErroLogin().contains(mensagemErroEsperada));
+    }
+    @Test
+    public void recuperarSenhaContaNaoRegistrada(){
+        //Objects instances
+        loginPage = new LoginPage();
+
+        //parameters
+        String usuario = "gabriedangelo";
+        String email = "gvideira900@gmail.com";
+        String mensagemErroEsperadaRecuperarSenha = "A informação fornecida não combina com nenhuma conta registrada!";
+
+        //Test
+        loginPage.preenhcerUsuario(usuario);
+        loginPage.clicarEmEntrar1();
+        loginPage.clicarEmPerdeuSenha();
+        loginPage.preencherEmail(email);
+        loginPage.clicarEmEnviar();
+
+        Assert.assertTrue(loginPage.retornaMensagemErroContaNaoRegistrada().contains(mensagemErroEsperadaRecuperarSenha));
     }
 }
