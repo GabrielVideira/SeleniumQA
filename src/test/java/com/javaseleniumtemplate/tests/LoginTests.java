@@ -18,7 +18,7 @@ public class LoginTests extends TestBase {
 
         //Parameteres
         String usuario = "gabriedangelo";
-        String senha = "1234";
+        String senha = "1";
         String mensagemErroEsperada = "Sua conta pode estar desativada ou bloqueada";
 
         //Test

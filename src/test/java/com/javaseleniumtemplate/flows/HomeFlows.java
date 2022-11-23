@@ -1,6 +1,7 @@
 package com.javaseleniumtemplate.flows;
 
 import com.javaseleniumtemplate.pages.HomePage;
+import com.javaseleniumtemplate.pages.LoginPage;
 
 
 public class HomeFlows {
@@ -13,8 +14,13 @@ public class HomeFlows {
     }
 
     //Flows
-    public void efetuarLogin(String usuario, String senha){
+    public void verificarPlanejamento(String usuario, String senha){
         homePage.preenhcerUsuario(usuario);
+        homePage.clicarEmEntrar1();
+        homePage.preencherSenha(senha);
+        homePage.clicarEmEntrar2();
+        homePage.clicarEmPlanejamento();
 
+    }
 
 }
